@@ -39,17 +39,17 @@ To setup your Windows 10 IoT Core development PC, you first need to install the 
 
 	> **NOTE:** If you choose to install a different edition of VS 2015, make sure to do a **Custom** install and select the checkbox **Universal Windows App Development Tools** -> **Tools and Windows SDK**.
 	
-	> **NOTE:** Pre-installing this was a pre-requisite to this course, but if you have not yet installed, go you your "IoT Lab Day" folder and click "1 - VS Community Installer" to install. 
+	> **NOTE:** Pre-installing this was a pre-requisite to this course, but if you have not yet installed, go you your **"IoT Lab Day"** folder and click **"1 - VS Community Installer"** to install. 
 
 	You can validate your Visual Studio installation by selecting _Help > About Microsoft Visual Studio_. The required version of **Visual Studio** is 14.0.23107.0 D14Rel. The required version of **Visual Studio Tools for Universal Windows Apps** is 14.0.23121.00 D14OOB.
 
 - Windows IoT Core Project Templates. You can download them from [here](https://visualstudiogallery.msdn.microsoft.com/06507e74-41cf-47b2-b7fe-8a2624202d36). Alternatively, the templates can be found by searching for Windows IoT Core Project Templates in the [Visual Studio Gallery](https://visualstudiogallery.msdn.microsoft.com/) or directly from Visual Studio in the Extension and Updates dialog (Tools > Extensions and Updates > Online). 
 
-> **NOTE:** Core Templates can be found in "IoT Lab Day" folder and, "2 - IoT Core Templates" to install. 
+> **NOTE:** Core Templates can be found in **"IoT Lab Day"** folder, click **"2 - IoT Core Templates"** to install. 
 
 - Make sure you’ve **enabled developer mode** in Windows 10 by following [these instructions](https://msdn.microsoft.com/library/windows/apps/xaml/dn706236.aspx).
 
-- Finally, go to "IoT Lab Day" folder and click "3 - IoT Core Watcher Setup" to install the core watcher. 
+- Finally, go to **"IoT Lab Day"** folder and click **"3 - IoT Core Watcher Setup"** to install the core watcher. 
 
 <a name="Task12" />
 ###Setting up your Devices###
@@ -146,7 +146,7 @@ You will need a Microsoft Azure subscription ([free trial subscription] (http://
 
 ####Creating an Event Hub and a Shared Access Policy####
 
-> **NOTE:** Throughout this section, you can save your details in "4 - TODO - Azure DATA" 
+> **NOTE:** Throughout this section, you can save your details in **"4 - TODO - Azure DATA"** 
 
 1. Enter the Azure portal, by browsing to http://manage.windowsazure.com
 2. Create a new Event Hub. To do this, click **NEW**, then click **APP SERVICES**, then click **SERVICE BUS**, then **EVENT HUB**, and finally click **CUSTOM CREATE**.
@@ -205,7 +205,7 @@ In order to get the information out of the hat sensors, you will take advantage 
 
 1. Download the [zipped repository](https://bitbucket.org/ghi_elect/windows-iot/get/183b64180b7c.zip "Download FEZ HAT Developers' Guide repository"), extract the files in your file system and locate the _GHIElectronics.UAP.sln_ solution file (You must have **Visual Studio** installed in order to open the solution).
 
-> **NOTE:** The above zipped repository can be found in "5 - GHIElectronics Solution"
+> **NOTE:** The above zipped repository can be found in **"5 - GHIElectronics Solution"**
 
 2. After opening the solution you will see several projects. The _Developers's Guide_ comes with examples of many of the shields provided by the company. Right-click the one named _GHIElectronics.UAP.Examples.FEZHAT_, and select **Set as Startup Project**.
 
@@ -279,7 +279,7 @@ In order to get the information out of the hat sensors, you will take advantage 
 
 	> **Note:** Clicking the **Find** button will display the **Remote Connection** screen.
 	
-	> **NOTE:** You will be deploying directly to your Pi over the USB to Ethernet connection (not WIFI). Therefore, you will need the IP address from the IoT Dashboard at this point (if the **Remote Connection** screen does not find your device.
+	> **NOTE:** You will be deploying directly to your Pi over the USB to Ethernet connection (not WIFI). Therefore, you will need the IP address from the IoT Dashboard at this point (if the **Remote Connection** screen does not find your device).
 
 8. If the program is successfully deployed to the device, the current value of the different sensors will be displayed on the screen. The shield leds will also be turned on and off alternately. If you don't have a screen connected to the _Raspberry_, you can add the following code to the **OnTick** method in order to show the value of the sensors in the Visual Studio **Output Console**.  (Insert the code after reading the sensors).
 
