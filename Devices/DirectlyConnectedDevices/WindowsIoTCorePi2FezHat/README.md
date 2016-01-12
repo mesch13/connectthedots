@@ -38,12 +38,18 @@ To setup your Windows 10 IoT Core development PC, you first need to install the 
 - Visual Studio 2015 or above – [Community Edition](http://www.visualstudio.com/downloads/download-visual-studio-vs) is sufficient.
 
 	> **NOTE:** If you choose to install a different edition of VS 2015, make sure to do a **Custom** install and select the checkbox **Universal Windows App Development Tools** -> **Tools and Windows SDK**.
+	
+	> **NOTE:** Pre-installing this was a pre-requisite to this course, but if you have not yet installed, go you your "IoT Lab Day" folder and click "1 - VS Community Installer" to install. 
 
 	You can validate your Visual Studio installation by selecting _Help > About Microsoft Visual Studio_. The required version of **Visual Studio** is 14.0.23107.0 D14Rel. The required version of **Visual Studio Tools for Universal Windows Apps** is 14.0.23121.00 D14OOB.
 
 - Windows IoT Core Project Templates. You can download them from [here](https://visualstudiogallery.msdn.microsoft.com/06507e74-41cf-47b2-b7fe-8a2624202d36). Alternatively, the templates can be found by searching for Windows IoT Core Project Templates in the [Visual Studio Gallery](https://visualstudiogallery.msdn.microsoft.com/) or directly from Visual Studio in the Extension and Updates dialog (Tools > Extensions and Updates > Online). 
 
+> **NOTE:** Core Templates can be found in "IoT Lab Day" folder and, "2 - IoT Core Templates" to install. 
+
 - Make sure you’ve **enabled developer mode** in Windows 10 by following [these instructions](https://msdn.microsoft.com/library/windows/apps/xaml/dn706236.aspx).
+
+- Finally, go to "IoT Lab Day" folder and click "3 - IoT Core Watcher Setup" to install the core watcher. 
 
 <a name="Task12" />
 ###Setting up your Devices###
@@ -65,17 +71,17 @@ To setup your devices perform the following steps:
 	
 	_The FEZ hat connected to the Raspberry Pi 2 device_
 
-2. Get a Windows 10 IoT Core SD Card or download the **Windows 10 IoT Core** image as per the instructions on <https://ms-iot.github.io/content/en-US/win10/SetupRPI.htm>, be sure to follow the steps to mount the image, and run the installer on your development PC. If you already have the OS image on a card, you still need to follow this step to get the IoT Core Watcher and Visual Studio templates on to your PC.
+2. Plug the Rasperry Pi Wifi Dongle into your Pi. 
 
-3. Once you have the image on the card, insert the micro SD card in the Raspberry Pi device.
-
-5. Connect the Raspberry Pi to a power supply, optionally a keyboard, mouse and monitor, and use the Ethernet cable to connect your device and your development PC. You can do it by plugging in one end of the spare Ethernet cable to the extra Ethernet port on your PC, and the other end of the cable to the Ethernet port on your IoT Core device. (Do this using an on-board port or an auto-crossover USB->Ethernet interface.)
+5. Connect the Raspberry Pi to a power supply and use the Ethernet cable to connect your device and your development PC. You can do it by plugging in one end of the spare Ethernet cable to the extra Ethernet port on your PC, and the other end of the cable to the Ethernet port on your IoT Core device. (Do this using an on-board port or an auto-crossover USB->Ethernet interface.)
 
 6. Wait for the OS to boot.
 
-7. Run the **Windows 10 IoT Core Watcher** utility (installed in step 2) in your development PC and copy your Raspberry Pi IP address by right-clicking on the detected device and selecting **Copy IP Address**.
+7. Run the **Windows 10 IoT Core Watcher** utility (installed previously) in your development PC and copy your Raspberry Pi IP address by right-clicking on the detected device and selecting **Copy IP Address**.
 
 	![windows-iot-core-watcher](Images/windows-iot-core-watcher.png?raw=true)
+	
+	> **NOTE:** Throughout this version of the lab we will be working with the **IoT Dashboard** installed previously. The images above are using the IoT Core Watcher - you can use that if you have it installed. All you need it for is to get the IP of the device. 
 
 8. Launch an administrator PowerShell console on your local PC. The easiest way to do this is to type _powershell_ in the **Search the web and Windows** textbox near the Windows Start Menu. Windows will find **PowerShell** on your machine. Right-click the **Windows PowerShell** entry and select **Run as administrator**. The PS console will show.
  
@@ -127,6 +133,7 @@ You can also rename the device by using the web server, but certain functions ar
 	1. Enter **Administrator** for the username, and supply your password (_p@ssw0rd_ by default).
 	2. Click **Networking** in the left-hand pane.
 	3. Under **Available networks**, select network you would like to connect to and supply the connection credentials. Click **Connect** to initiate the connection.
+	4. Connect to your specified Wifi network. Either **RASPONLY1** or **RASPONLY2** (password will be on your desk - please only connect to this network from your Raspberry Pi. Continue to use **MSFT Open** for your development PC)
 
 	![networking-wifi-adapters](Images/networking-wifi-adapters.png?raw=true)
 	
@@ -138,6 +145,8 @@ You can also rename the device by using the web server, but certain functions ar
 You will need a Microsoft Azure subscription ([free trial subscription] (http://azure.microsoft.com/en-us/pricing/free-trial/) is sufficient)
 
 ####Creating an Event Hub and a Shared Access Policy####
+
+> **NOTE:** Throughout this section, you can save your details in "4 - TODO - Azure DATA" 
 
 1. Enter the Azure portal, by browsing to http://manage.windowsazure.com
 2. Create a new Event Hub. To do this, click **NEW**, then click **APP SERVICES**, then click **SERVICE BUS**, then **EVENT HUB**, and finally click **CUSTOM CREATE**.
@@ -195,6 +204,8 @@ Now that the device is configured, you will see how to create an application to 
 In order to get the information out of the hat sensors, you will take advantage of the [Developers' Guide](https://www.ghielectronics.com/docs/329/fez-hat-developers-guide "GHI Electronics FEZ HAT Developer's Guide") that [GHI Electronics](https://www.ghielectronics.com/ "GHI Electronics")  published.
 
 1. Download the [zipped repository](https://bitbucket.org/ghi_elect/windows-iot/get/183b64180b7c.zip "Download FEZ HAT Developers' Guide repository"), extract the files in your file system and locate the _GHIElectronics.UAP.sln_ solution file (You must have **Visual Studio** installed in order to open the solution).
+
+> **NOTE:** The above zipped repository can be found in "5 - GHIElectronics Solution"
 
 2. After opening the solution you will see several projects. The _Developers's Guide_ comes with examples of many of the shields provided by the company. Right-click the one named _GHIElectronics.UAP.Examples.FEZHAT_, and select **Set as Startup Project**.
 
@@ -267,6 +278,8 @@ In order to get the information out of the hat sensors, you will take advantage 
 	_Changing the Remote Connection Settings_
 
 	> **Note:** Clicking the **Find** button will display the **Remote Connection** screen.
+	
+	> **NOTE:** You will be deploying directly to your Pi over the USB to Ethernet connection (not WIFI). Therefore, you will need the IP address from the IoT Dashboard at this point (if the **Remote Connection** screen does not find your device.
 
 8. If the program is successfully deployed to the device, the current value of the different sensors will be displayed on the screen. The shield leds will also be turned on and off alternately. If you don't have a screen connected to the _Raspberry_, you can add the following code to the **OnTick** method in order to show the value of the sensors in the Visual Studio **Output Console**.  (Insert the code after reading the sensors).
 
@@ -285,9 +298,7 @@ In order to get the information out of the hat sensors, you will take advantage 
 
 Now that you know how to read the FEZ HAT sensors, you will send that information to an Azure Event Hub. To do that, you will use an existing [ConnectTheDots](https://github.com/Azure/connectthedots "Connect the Dots website") example which shows how to connect a Windows 10 IoT core device to Azure and send sensor information.
 
-1. [Download](https://github.com/Azure/connectthedots/archive/master.zip "Download the ConnectTheDots repository") (or clone) the **ConnectTheDots** repository and extract the files to a folder in your file system. Open the solution located in the **\Devices\DirectlyConnectedDevices\WindowsIoTCorePi2** folder.
-
-	> **Note:** Depending on the **Visual Studio** version that you are using, it is possible that the project needs to be updated - since the sample app was built using the Visual Studio 2015 Release Candidate (RC) which format is not compatible with the VS 2015 RTM. An already updated version can be found in the **WindowsIoTCorePi2FezHat\Code\Begin**
+1. Open the solution located at **"6 - Send Telemetry Data to Azure Event Hub"** from your IoT Lab Day folder.    
 
 2. Before running the application, you must set the **Azure Event Hub** connection information. In order to allow the application to send data to the **Event Hub**, the following information must be provided:
 
@@ -749,6 +760,8 @@ In the previous task you created an Universal App that read data from the sensor
 <a name="Task32" />
 ###Using Power BI###
 
+> **NOTE:** Those of you who do not have organizational accounts may not be able to access Power BI. If that's the case, just move on to the next section.
+
 Another (and more interesting) way to use the information received from the connected device/s is to get near real-time analysis using the **Microsoft Power BI** tool. In this section you will see how to configure this tool to get an online dashoard showing summarized information about the different sensors.
 
 <a name="Task321" />
@@ -970,7 +983,9 @@ Once the job starts it creates the Power BI datasource associated with the given
 
 <a name="Task33" />
 ###Consuming the Event Hub data from a Website###
-	
+
+> **NOTE:** SKIP step 1 and 2 below, just navigate to **"7 - WebSite"** on your IoT Lab Day folder.
+
 1. Download the Website project located [here](https://github.com/southworkscom/connectthedots/tree/master/Azure/WebSite).
 2. Browse to the **Assets** folder and copy the _Web.config_ file inside the **ConnectTheDotsWebSite** folder of the Website.
 
