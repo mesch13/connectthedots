@@ -510,7 +510,7 @@ Now that you know how to read the FEZ HAT sensors, you will send that informatio
 
 	You can also change the unit of measure used by the Temperature sensor from Farenheit (F) to Celsius (C) since the FEZ HAT measueres temperature in Celsius.
 	
-16. Next, add the following code to the **Timer_Tick** method to poll the data from the temperature sensor and send it to Azure.
+16. Next, add the following code to the **Timer_Tick** method to poll the data from the light sensor and send it to Azure.
 	
 	````C#
 	// Light Sensor
